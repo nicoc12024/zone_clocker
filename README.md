@@ -29,6 +29,10 @@ Zone Clocker full-stack application designed to streamline employee schedule man
 
 8. **Simplified Employee Login**: Employees log in using their assigned ID numbers (no passwords required), accessing their schedules and checking in or out as needed.
 
+9. **Admin Login**: http://localhost:3000/login
+
+10. **Employee Login**: http://localhost:3000/login-employee
+
 ## Demo
 
 ![Demo](./client/public/demo/home.png)
