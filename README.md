@@ -1,4 +1,3 @@
-
 # Zone Clocker: Employee Schedule and Work Zone Management App
 
 **Platform**: Full Stack (Node.js, Express.js, React with Vite, TypeScript, MySQL)
@@ -6,7 +5,8 @@
 **Target Users**: Companies and Organizations
 
 ## Core Functionality
-Zone Clocker is a robust, full-stack application designed to streamline employee schedule management and work zone assignments for companies. It leverages advanced technologies like Node.js, Express.js, React with Vite, TypeScript, and MySQL to offer a seamless user experience. 
+
+Zone Clocker full-stack application designed to streamline employee schedule management and work zone assignments for companies. It provides a centralized platform for admins to manage employee schedules and work zones, with a focus on time tracking and location-based check-ins and check-outs.
 
 ## Key Features
 
@@ -15,7 +15,8 @@ Zone Clocker is a robust, full-stack application designed to streamline employee
 2. **Employee Management**: Admins can add employees by inputting essential details like name and ID number, with additional optional information.
 
 3. **Work Zone Creation and Assignment**:
-   - Admins can define work zones using a map interface, selecting specific areas and setting radii to mark designated workspaces.
+
+   - Admins can define work zones using a map interface, selecting specific areas and setting radio to mark designated workspaces.
    - Employees are assigned to these zones, and their check-ins and check-outs are only valid when done within these designated areas.
 
 4. **Time Tracking and Calendar Integration**: Both employees and admins can track check-in and check-out times via an intuitive calendar interface.
@@ -28,12 +29,11 @@ Zone Clocker is a robust, full-stack application designed to streamline employee
 
 8. **Simplified Employee Login**: Employees log in using their assigned ID numbers (no passwords required), accessing their schedules and checking in or out as needed.
 
-9. **Enhanced Security and Ease of Use**: By eliminating the need for passwords, employee access is both secure and simplified, focusing on ID-based authentication.
+## Demo
 
-## Intended Benefits
-- Enhances the efficiency of managing employee schedules and work zones.
-- Facilitates accurate and area-restricted time tracking.
-- Streamlines administrative processes with easy-to-use interfaces.
-- Supports effective workforce management for varied company sizes.
-
-Zone Clocker is the ideal solution for companies seeking a modern, efficient way to handle their scheduling and employee location tracking needs. With its intuitive design and comprehensive features, it simplifies administrative tasks and enhances operational efficiency.
+![Demo](./client/public/demo/home.png)
+![Demo](./client/public/demo/employees.png)
+![Demo](./client/public/demo/addshift.png)
+![Demo](./client/public/demo/addzone.png)
+![Demo](./client/public/demo/adminaccounts.png)
+![Demo](./client/public/demo/employeeview.png)
