@@ -1,6 +1,7 @@
 import { FormEvent, useState } from "react";
 import { Link } from "react-router-dom";
 import axios, { AxiosError } from "axios";
+import { useNavigate } from "react-router-dom";
 
 export function CreateAccount() {
   const [email, setEmail] = useState<string>("");
@@ -8,6 +9,8 @@ export function CreateAccount() {
   const [companyName, setCompanyName] = useState<string>("");
   const [companyEmail, setCompanyEmail] = useState<string>("");
   const [name, setName] = useState<string>("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -20,6 +23,7 @@ export function CreateAccount() {
         company_email: companyEmail,
         company_name: companyName,
       });
+      navigate("/");
     } catch (err: unknown) {
       if (err instanceof Error) {
         const axiosError = err as AxiosError;

@@ -2,10 +2,11 @@ import { getDb } from "../../db.js";
 import { verifyPassword, generateHashedPassword } from "./utils/password.js";
 import { generateToken } from "./utils/token.js";
 import {
-  findAdminByEmail,
+  findAdminByEmailLogin,
   findEmployeeByIdNumber,
   createCompany,
   createAdminLinkedToCompany,
+  findAdminByEmailCreateAdmin,
 } from "./utils/dbQueries.js";
 
 // Register an admin and a company
@@ -16,12 +17,13 @@ export const registerAdminAndCompany = async (req, res) => {
     await connection.beginTransaction();
 
     const { company_email, company_name, name, email, password } = req.body;
+    console.log(req.body);
 
     // Create a new company
     const id_company = await createCompany(connection, company_email, company_name);
 
     // Check if admin email already exists
-    const existingAdmins = await findAdminByEmail(connection, email);
+    const existingAdmins = await findAdminByEmailCreateAdmin(connection, email);
 
     if (existingAdmins.length > 0) {
       await connection.rollback();
@@ -53,7 +55,7 @@ export const registerAdminAndCompany = async (req, res) => {
 export const login = async (req, res) => {
   try {
     // Search for admin with the provided email
-    const adminData = await findAdminByEmail(req.body.email);
+    const adminData = await findAdminByEmailLogin(req.body.email);
 
     if (adminData.length === 0) return res.status(404).json({ error: "User not found" });
 

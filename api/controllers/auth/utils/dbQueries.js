@@ -33,8 +33,9 @@ export const createAdminLinkedToCompany = async (
   }
 };
 
-export const findAdminByEmail = async (email) => {
+export const findAdminByEmailLogin = async (email) => {
   const connection = await getDb();
+  console.log(email);
   try {
     const [data] = await connection.query("SELECT * FROM admin WHERE email = ?", [email]);
     return data;
@@ -43,6 +44,16 @@ export const findAdminByEmail = async (email) => {
     throw err;
   } finally {
     connection.release();
+  }
+};
+
+export const findAdminByEmailCreateAdmin = async (connection, email) => {
+  try {
+    const [data] = await connection.query("SELECT * FROM admin WHERE email = ?", [email]);
+    return data;
+  } catch (err) {
+    console.error("Error while finding admin by email:", err);
+    throw err;
   }
 };
 
