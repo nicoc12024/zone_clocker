@@ -17,7 +17,6 @@ export const registerAdminAndCompany = async (req, res) => {
     await connection.beginTransaction();
 
     const { company_email, company_name, name, email, password } = req.body;
-    console.log(req.body);
 
     // Create a new company
     const id_company = await createCompany(connection, company_email, company_name);

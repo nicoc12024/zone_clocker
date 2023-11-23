@@ -35,7 +35,6 @@ export const createAdminLinkedToCompany = async (
 
 export const findAdminByEmailLogin = async (email) => {
   const connection = await getDb();
-  console.log(email);
   try {
     const [data] = await connection.query("SELECT * FROM admin WHERE email = ?", [email]);
     return data;
